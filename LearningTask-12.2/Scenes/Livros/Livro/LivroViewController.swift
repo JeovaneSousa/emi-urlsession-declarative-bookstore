@@ -17,6 +17,15 @@ class LivroViewController: UIViewController {
     @IBOutlet private weak var precoImpressoLabel: UILabel!
     @IBOutlet private weak var precoComboLabel: UILabel!
     
+    
+    @IBOutlet weak var contentDescriptionLabel: UILabel!
+    @IBOutlet weak var authorImageView: UIImageView!
+    @IBOutlet weak var authorNameLabel: UILabel!
+    @IBOutlet weak var authorDescriptionLabel: UILabel!
+    @IBOutlet weak var pageNumberLabel: UILabel!
+    @IBOutlet weak var ISBNLabel: UILabel!
+    @IBOutlet weak var publicationDateLabel: UILabel!
+    
     var livro: Livro!
     
     override func viewDidLoad() {
@@ -33,6 +42,15 @@ class LivroViewController: UIViewController {
         nomeDoAutorLabel.text = livro.autor.nomeCompleto
         capaImageView.setImageByDowloading(url: livro.imagemDeCapaURI,
                                            placeholderImage: .init(named: "Book"))
+        
+        contentDescriptionLabel.text = livro.description
+        authorImageView.setImageByDowloading(url: livro.autor.fotoURI,
+                                            placeholderImage: .init(named: "Avatar"))
+        authorNameLabel.text = livro.autor.nomeCompleto
+        authorDescriptionLabel.text = livro.autor.bio
+        pageNumberLabel.text = String(describing:livro.numberOfPages ?? 0)
+        ISBNLabel.text = livro.isbn
+        publicationDateLabel.text = livro.publicationDate
     
         livro.precos.forEach { preco in
             let valor = NumberFormatter.formatToCurrency(decimal: preco.valor)

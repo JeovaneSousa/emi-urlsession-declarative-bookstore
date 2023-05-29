@@ -46,6 +46,9 @@
 		58C67260288B0ECF00E8FD01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58C6725E288B0ECF00E8FD01 /* Main.storyboard */; };
 		58C67262288B0ED200E8FD01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58C67261288B0ED200E8FD01 /* Assets.xcassets */; };
 		58C67265288B0ED200E8FD01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58C67263288B0ED200E8FD01 /* LaunchScreen.storyboard */; };
+		D96C8A84296D0F6400EAA8AF /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C8A83296D0F6400EAA8AF /* HTTPRequest.swift */; };
+		D98A272E2971195300B6A89A /* NovoLivroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A272D2971195300B6A89A /* NovoLivroViewController.swift */; };
+		D98A27302971D91600B6A89A /* HelperMethods+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A272F2971D91600B6A89A /* HelperMethods+UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +93,9 @@
 		58C67261288B0ED200E8FD01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58C67264288B0ED200E8FD01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58C67266288B0ED200E8FD01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D96C8A83296D0F6400EAA8AF /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
+		D98A272D2971195300B6A89A /* NovoLivroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovoLivroViewController.swift; sourceTree = "<group>"; };
+		D98A272F2971D91600B6A89A /* HelperMethods+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HelperMethods+UIViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				58089E39289AE4E5001F8607 /* ListaDeLivros */,
+				D98A272C2971191D00B6A89A /* NovoLivro */,
 				58089E45289AE6DA001F8607 /* Livro */,
 				58089E4A289AE732001F8607 /* Carrinho */,
 				580C34182951FA480099D5D9 /* SeletorDeAutor */,
@@ -214,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				586D6376294E1AFC0011076E /* ImageDownload.swift */,
+				D96C8A83296D0F6400EAA8AF /* HTTPRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -234,6 +242,7 @@
 				586D6378294E1B2B0011076E /* ImageFetching+UIImageView.swift */,
 				580C34142951E4230099D5D9 /* CustomPatterns+DateFormatter.swift */,
 				580C34162951E4860099D5D9 /* DecodingFormattedDates+JSONCoding.swift */,
+				D98A272F2971D91600B6A89A /* HelperMethods+UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -374,6 +383,14 @@
 			path = "LearningTask-12.2";
 			sourceTree = "<group>";
 		};
+		D98A272C2971191D00B6A89A /* NovoLivro */ = {
+			isa = PBXGroup;
+			children = (
+				D98A272D2971195300B6A89A /* NovoLivroViewController.swift */,
+			);
+			path = NovoLivro;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -452,6 +469,8 @@
 				5865B862294E315A00E6B23D /* User.swift in Sources */,
 				580C34172951E4860099D5D9 /* DecodingFormattedDates+JSONCoding.swift in Sources */,
 				5881AC5D288B1EF500F9A9CC /* AutoresAPI.swift in Sources */,
+				D96C8A84296D0F6400EAA8AF /* HTTPRequest.swift in Sources */,
+				D98A27302971D91600B6A89A /* HelperMethods+UIViewController.swift in Sources */,
 				58089E3B289AE503001F8607 /* LivrosListViewController.swift in Sources */,
 				5881AC5F288B1F0500F9A9CC /* LivrosAPI.swift in Sources */,
 				5881AC63288B1F6E00F9A9CC /* ListaDeItensHorizontal.swift in Sources */,
@@ -465,6 +484,7 @@
 				58089E49289AE717001F8607 /* Currency+NumberFormatter.swift in Sources */,
 				586D6377294E1AFC0011076E /* ImageDownload.swift in Sources */,
 				5881AC5A288B1EC300F9A9CC /* Autor.swift in Sources */,
+				D98A272E2971195300B6A89A /* NovoLivroViewController.swift in Sources */,
 				580C34152951E4230099D5D9 /* CustomPatterns+DateFormatter.swift in Sources */,
 				58089E42289AE697001F8607 /* LivroCollectionViewCell.swift in Sources */,
 				580C341A2951FA660099D5D9 /* SeletorDeAutorViewController.swift in Sources */,

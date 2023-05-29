@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eeE-iw-8R3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eeE-iw-8R3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -410,7 +410,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qNN-F8-CYZ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1483" y="-918"/>
+            <point key="canvasLocation" x="-1484" y="-934"/>
         </scene>
         <!--Nova Tecnologia View Controller-->
         <scene sceneID="2ks-Zw-NSa">
@@ -621,11 +621,329 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="pRq-di-tzd">
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="Eg7-L8-nzG"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7EJ-Qr-gbn">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="1pF-c1-f7f" kind="presentation" identifier="verFormNovoLivroSegue" id="Nb9-Qd-x37"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Qx-bl-z9l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3433" y="11"/>
+        </scene>
+        <!--Novo Livro View Controller-->
+        <scene sceneID="f0P-uW-Ule">
+            <objects>
+                <viewController id="1pF-c1-f7f" customClass="NovoLivroViewController" customModule="LearningTask_12_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AMa-qS-EOS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rir-NA-uzl">
+                                <rect key="frame" x="0.0" y="48" width="414" height="790"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="H5w-va-dIS" userLabel="Container Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1235.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kYY-Dw-n6f" userLabel="Logo Wrapper Stack View">
+                                                <rect key="frame" x="0.0" y="16" width="414" height="32"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoTypo" translatesAutoresizingMaskIntoConstraints="NO" id="IMi-SO-4cP" userLabel="Logo Image View">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="32"/>
+                                                        <color key="tintColor" name="Texas Rose"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="NdO-CW-YbN"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lMV-Oe-eUQ" userLabel="Content Container Stack View">
+                                                <rect key="frame" x="0.0" y="64" width="414" height="1171.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="q1L-w2-mTC" userLabel="Image Wrapper Stack View">
+                                                        <rect key="frame" x="20" y="0.0" width="374" height="150"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Book" translatesAutoresizingMaskIntoConstraints="NO" id="UTM-9l-INd" userLabel="Capaa do Livro Image View">
+                                                                <rect key="frame" x="134" y="0.0" width="106" height="150"/>
+                                                                <color key="tintColor" name="Sawtooth Aak"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="150" id="NvO-Wi-BmR"/>
+                                                                    <constraint firstAttribute="width" secondItem="UTM-9l-INd" secondAttribute="height" multiplier="1:1.41" id="UhU-ip-1ba"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <integer key="value" value="4"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="iek-27-E7n" userLabel="Form Stack View">
+                                                        <rect key="frame" x="20" y="170" width="374" height="913.5"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Q8o-6f-Pu1" userLabel="Foto da Capa Stack View">
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="62.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Foto de Capa:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhJ-hy-GNF" userLabel="Foto da Capa Label Input">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="https://domain.com/photos/photo.png" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zTZ-ld-KMH" userLabel="Foto da Capa Text Field">
+                                                                        <rect key="frame" x="0.0" y="28.5" width="374" height="34"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <connections>
+                                                                            <action selector="fotoDaCapaTextFieldEditingDidEnd:" destination="1pF-c1-f7f" eventType="editingDidEnd" id="RJZ-ac-HZI"/>
+                                                                        </connections>
+                                                                    </textField>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="s2b-rF-eoL" userLabel="Titulo Stack View">
+                                                                <rect key="frame" x="0.0" y="78.5" width="374" height="62.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSF-69-eeh" userLabel="Titulo do Livro Label Input">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Título do livro" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6qs-WE-FIL" userLabel="Titulo do Livro Text Field">
+                                                                        <rect key="frame" x="0.0" y="28.5" width="374" height="34"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AQ9-Pr-LHp" userLabel="Subtitulo Stack View">
+                                                                <rect key="frame" x="0.0" y="157" width="374" height="62.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtítulo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKN-Rz-IJO" userLabel="Subtitulo Label Input">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Subtitulo do livro" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tax-mk-zJf" userLabel="Subtitulo Text Field">
+                                                                        <rect key="frame" x="0.0" y="28.5" width="374" height="34"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dgl-Ik-rjZ" userLabel="Autor do Livro Stack View">
+                                                                <rect key="frame" x="0.0" y="235.5" width="374" height="62.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autor:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQz-dH-3aE" userLabel="Autor do Livro Label">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Autor do livro" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ElR-0H-vBD" userLabel="Autor do Livro Text Field">
+                                                                        <rect key="frame" x="0.0" y="28.5" width="374" height="34"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <connections>
+                                                                            <action selector="autorDoLivroTextFieldEditingDidBegin:" destination="1pF-c1-f7f" eventType="editingDidBegin" id="jhw-CY-r6z"/>
+                                                                        </connections>
+                                                                    </textField>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LjE-lL-0ao" userLabel="Descricao do Livro Stack View">
+                                                                <rect key="frame" x="0.0" y="314" width="374" height="128.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGE-Nn-qdd" userLabel="Descricao do Livro Label">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Descrição do livro" translatesAutoresizingMaskIntoConstraints="NO" id="EJe-90-O4a" userLabel="Descricao do livro Text View">
+                                                                        <rect key="frame" x="0.0" y="28.5" width="374" height="100"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="100" id="Nl6-ce-ALK"/>
+                                                                        </constraints>
+                                                                        <color key="textColor" systemColor="tertiaryLabelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                        <connections>
+                                                                            <outlet property="delegate" destination="1pF-c1-f7f" id="ozp-bq-H40"/>
+                                                                        </connections>
+                                                                    </textView>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gur-bI-dVk" userLabel="Preco Ebook Stack View">
+                                                                <rect key="frame" x="0.0" y="458.5" width="374" height="62.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preço do eBook:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="de6-xz-Oe8" userLabel="Preco Ebook Label">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="R$0,00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0N2-BX-uY7" userLabel="Preco Ebook Text Field">
+                                                                        <rect key="frame" x="0.0" y="28.5" width="374" height="34"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                                    </textField>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hX5-ar-wfe" userLabel="Preco Impresso Stack View">
+                                                                <rect key="frame" x="0.0" y="537" width="374" height="62.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preço do Impresso:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TzN-Jf-nOe" userLabel="Preco Impresso Label">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="R$0,00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QiQ-NA-U73" userLabel="Preco Impresso Text Field">
+                                                                        <rect key="frame" x="0.0" y="28.5" width="374" height="34"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                                    </textField>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9oo-Hj-aSQ" userLabel="Preco Combo Stack View">
+                                                                <rect key="frame" x="0.0" y="615.5" width="374" height="62.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preço do Combo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLj-C9-ME4" userLabel="Preco Combo Label">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="R$0,00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wkt-9l-WLu" userLabel="Preco Combo Text Field">
+                                                                        <rect key="frame" x="0.0" y="28.5" width="374" height="34"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                                    </textField>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QFL-lz-6Oe" userLabel="Numero de Paginas Stack View">
+                                                                <rect key="frame" x="0.0" y="694" width="374" height="62.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Número de Páginas:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAO-Bw-Jiz" userLabel="Numero de Paginas Label">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="123" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pZL-d5-GA7" userLabel="Numero de Paginas Text Field">
+                                                                        <rect key="frame" x="0.0" y="28.5" width="374" height="34"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                    </textField>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="M0t-Zj-T4E" userLabel="ISBN Stack View">
+                                                                <rect key="frame" x="0.0" y="772.5" width="374" height="62.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISBN:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZ2-Gz-loA" userLabel="ISBN Label Input">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="123-45-67890-12-3" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Dj-4k-LNX" userLabel="ISBN Text Field">
+                                                                        <rect key="frame" x="0.0" y="28.5" width="374" height="34"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eNL-bM-Ffn" userLabel="Data de Publicacao Stack View">
+                                                                <rect key="frame" x="0.0" y="851" width="374" height="62.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data de Publicação:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="loL-eH-gaZ" userLabel="Data de Publicacao Label Input">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="01/01/0001" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xn9-8n-OzI" userLabel="Data de Publicacao Text Field">
+                                                                        <rect key="frame" x="0.0" y="28.5" width="374" height="34"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIv-YJ-BNs">
+                                                        <rect key="frame" x="20" y="1103.5" width="374" height="48"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="48" id="Nmr-Xf-cSn"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Adicionar Livro" cornerStyle="capsule">
+                                                            <color key="baseBackgroundColor" name="Texas Rose"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="adicionarLivroButtonPressed:" destination="1pF-c1-f7f" eventType="touchUpInside" id="q6t-Zb-OtF"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="20" bottom="20" trailing="20"/>
+                                            </stackView>
+                                        </subviews>
+                                        <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="H5w-va-dIS" secondAttribute="bottom" id="1aN-aY-aPt"/>
+                                    <constraint firstItem="H5w-va-dIS" firstAttribute="leading" secondItem="rir-NA-uzl" secondAttribute="leading" id="61K-J8-2ho"/>
+                                    <constraint firstAttribute="trailing" secondItem="H5w-va-dIS" secondAttribute="trailing" id="JFB-A9-9cl"/>
+                                    <constraint firstItem="H5w-va-dIS" firstAttribute="centerX" secondItem="rir-NA-uzl" secondAttribute="centerX" id="Uju-GV-aPk"/>
+                                    <constraint firstItem="H5w-va-dIS" firstAttribute="top" secondItem="rir-NA-uzl" secondAttribute="top" id="hUv-54-qxb"/>
+                                    <constraint firstItem="H5w-va-dIS" firstAttribute="centerY" secondItem="rir-NA-uzl" secondAttribute="centerY" priority="250" id="pGf-0t-UU9"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2jB-fN-qZY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2jB-fN-qZY" firstAttribute="top" secondItem="rir-NA-uzl" secondAttribute="top" id="SNj-mU-X0u"/>
+                            <constraint firstItem="2jB-fN-qZY" firstAttribute="leading" secondItem="rir-NA-uzl" secondAttribute="leading" id="Vdh-fA-3zN"/>
+                            <constraint firstItem="rir-NA-uzl" firstAttribute="bottom" secondItem="2jB-fN-qZY" secondAttribute="bottom" id="XSa-V1-QtY"/>
+                            <constraint firstItem="rir-NA-uzl" firstAttribute="trailing" secondItem="2jB-fN-qZY" secondAttribute="trailing" id="atr-3G-5SB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ISBNTextField" destination="7Dj-4k-LNX" id="V15-Fa-VTj"/>
+                        <outlet property="autorTextField" destination="ElR-0H-vBD" id="5BX-nX-mv6"/>
+                        <outlet property="capaDoLivroImageView" destination="UTM-9l-INd" id="LUa-Sp-Txb"/>
+                        <outlet property="dataDePublicacaoTextField" destination="Xn9-8n-OzI" id="e1K-4Q-xYZ"/>
+                        <outlet property="descricaoTextView" destination="EJe-90-O4a" id="pwr-S2-wf9"/>
+                        <outlet property="fotoDaCapaTextField" destination="zTZ-ld-KMH" id="tD3-OG-yfj"/>
+                        <outlet property="numeroDePaginasTextField" destination="pZL-d5-GA7" id="cpe-Nf-dR8"/>
+                        <outlet property="precoComboTextField" destination="Wkt-9l-WLu" id="o0s-8e-Rvt"/>
+                        <outlet property="precoEbookTextField" destination="0N2-BX-uY7" id="sNg-yk-Hvd"/>
+                        <outlet property="precoImpressoTextField" destination="QiQ-NA-U73" id="T7W-uf-AEM"/>
+                        <outlet property="subtituloTextField" destination="tax-mk-zJf" id="AkO-dx-bwR"/>
+                        <outlet property="tituloTextField" destination="6qs-WE-FIL" id="9Gh-0I-Aja"/>
+                        <segue destination="iD4-bq-Wxd" kind="showDetail" identifier="verSeletorDeAutorViewControllerSegue" id="4pn-Ax-ih6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d9N-UZ-TU6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3433" y="800"/>
         </scene>
         <!--Livro View Controller-->
         <scene sceneID="EAJ-aT-n7I">
@@ -635,217 +953,374 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="804"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Abu-O9-TRp" userLabel="Container Stack View">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="506.5"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQ1-h8-x3c">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="721"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="QnE-AC-3I6" userLabel="Header Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EpF-gv-J3e" userLabel="Container Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="887.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="firstBaseline" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mCv-kS-MYQ" userLabel="Info Livro Stack View">
-                                                <rect key="frame" x="20" y="20" width="374" height="180"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Abu-O9-TRp" userLabel="Content Stack View">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="506.5"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="xeQ-5I-cTm" userLabel="Titulos Stack View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="230.5" height="103.5"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="QnE-AC-3I6" userLabel="Header Stack View">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título do Livro" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3UW-aq-4gB" userLabel="Titulo Livro Label">
-                                                                <rect key="frame" x="0.0" y="0.0" width="230.5" height="31.5"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="firstBaseline" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mCv-kS-MYQ" userLabel="Info Livro Stack View">
+                                                                <rect key="frame" x="20" y="20" width="374" height="180"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="xeQ-5I-cTm" userLabel="Titulos Stack View">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="230.5" height="103.5"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título do Livro" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3UW-aq-4gB" userLabel="Titulo Livro Label">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="230.5" height="31.5"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtítulo do Livro" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dia-PN-ejE" userLabel="Subtitulo Livro Label">
+                                                                                <rect key="frame" x="0.0" y="43.5" width="230.5" height="26.5"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do Autor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mq5-fs-VNq" userLabel="Nome Autor Label">
+                                                                                <rect key="frame" x="0.0" y="82" width="230.5" height="21.5"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wAG-b4-M5m" userLabel="Capa Image View">
+                                                                        <rect key="frame" x="246.5" y="0.0" width="127.5" height="180"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="wAG-b4-M5m" secondAttribute="height" multiplier="1:1.41" id="IsJ-tc-X5w"/>
+                                                                            <constraint firstAttribute="height" constant="180" id="ZMw-lE-tr4"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="Pampas"/>
+                                                        <directionalEdgeInsets key="directionalLayoutMargins" top="20" leading="20" bottom="20" trailing="20"/>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="FvO-fG-Tu8" userLabel="Precos Stack View">
+                                                        <rect key="frame" x="0.0" y="220" width="414" height="227"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8Wg-PS-LS0" userLabel="Ebook Stack View">
+                                                                <rect key="frame" x="20" y="16" width="374" height="43"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="WKb-G7-1YV" userLabel="Labels Stack View">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="63.5" height="43"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-book*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5H-mE-8se">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="63.5" height="19.5"/>
+                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 0,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOL-uA-WbX" userLabel="Preco Ebook Label">
+                                                                                <rect key="frame" x="0.0" y="23.5" width="63.5" height="19.5"/>
+                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLE-Vk-awQ">
+                                                                        <rect key="frame" x="268.5" y="5" width="105.5" height="33.5"/>
+                                                                        <color key="tintColor" name="Saffron Mango"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="filled" title="COMPRAR">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                                                                            <color key="baseForegroundColor" name="Pampas"/>
+                                                                            <color key="baseBackgroundColor" name="Saffron Mango"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <segue destination="4ch-bi-xj0" kind="showDetail" identifier="abrirCarrinhoComLivroSegue" id="lBA-t7-6bF"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNo-yV-kcj" userLabel="Separador View">
+                                                                <rect key="frame" x="20" y="75" width="374" height="1"/>
+                                                                <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="Aiv-io-zSs"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="HaB-fK-yph" userLabel="Impresso Stack View">
+                                                                <rect key="frame" x="20" y="92" width="374" height="43"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="clR-AK-H9V" userLabel="Labels Stack View">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="72.5" height="43"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Impresso" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fs-qQ-fWS">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="72.5" height="19.5"/>
+                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 0,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SC3-IQ-eBS" userLabel="Preco Impresso Label">
+                                                                                <rect key="frame" x="0.0" y="23.5" width="72.5" height="19.5"/>
+                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1HK-gN-W9h">
+                                                                        <rect key="frame" x="268.5" y="5" width="105.5" height="33.5"/>
+                                                                        <color key="tintColor" name="Saffron Mango"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="filled" title="COMPRAR">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                                                                            <color key="baseForegroundColor" name="Pampas"/>
+                                                                            <color key="baseBackgroundColor" name="Saffron Mango"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <segue destination="4ch-bi-xj0" kind="showDetail" identifier="abrirCarrinhoComLivroSegue" id="HCv-Ro-p3O"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yb6-GS-rYr" userLabel="Separador View">
+                                                                <rect key="frame" x="20" y="151" width="374" height="1"/>
+                                                                <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="Zmu-w1-bQH"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="VG6-Bf-bc0" userLabel="Combo Stack View">
+                                                                <rect key="frame" x="20" y="168" width="374" height="43"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="mPR-8u-rec" userLabel="Labels Stack View">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="146" height="43"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-book + Impresso" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hz-Jb-dim">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="146" height="19.5"/>
+                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 0,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTl-4N-Tnl" userLabel="Preco Impresso Label">
+                                                                                <rect key="frame" x="0.0" y="23.5" width="146" height="19.5"/>
+                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sqI-hh-GNW">
+                                                                        <rect key="frame" x="268.5" y="5" width="105.5" height="33.5"/>
+                                                                        <color key="tintColor" name="Saffron Mango"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="filled" title="COMPRAR">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                                                                            <color key="baseForegroundColor" name="Pampas"/>
+                                                                            <color key="baseBackgroundColor" name="Saffron Mango"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <segue destination="4ch-bi-xj0" kind="showDetail" identifier="abrirCarrinhoComLivroSegue" id="Khp-7y-0Ir"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="Rum"/>
+                                                        <constraints>
+                                                            <constraint firstItem="sqI-hh-GNW" firstAttribute="width" secondItem="nLE-Vk-awQ" secondAttribute="width" id="wC7-8b-19V"/>
+                                                            <constraint firstItem="1HK-gN-W9h" firstAttribute="width" secondItem="nLE-Vk-awQ" secondAttribute="width" id="zrS-Ge-pZM"/>
+                                                        </constraints>
+                                                        <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="20" bottom="16" trailing="20"/>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="56Y-2I-iWM" userLabel="Footer Stack View">
+                                                        <rect key="frame" x="0.0" y="447" width="414" height="59.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* Você terá acesso às futuras correções do livro. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiF-hU-J6s" userLabel="Info Label">
+                                                                <rect key="frame" x="20" y="20" width="374" height="19.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtítulo do Livro" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dia-PN-ejE" userLabel="Subtitulo Livro Label">
-                                                                <rect key="frame" x="0.0" y="43.5" width="230.5" height="26.5"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                                                        </subviews>
+                                                        <directionalEdgeInsets key="directionalLayoutMargins" top="20" leading="20" bottom="20" trailing="20"/>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Au7-c0-Aok" userLabel="Details Stack View">
+                                                <rect key="frame" x="0.0" y="506.5" width="414" height="381"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="wqc-dT-mkk" userLabel="Content Stack View">
+                                                        <rect key="frame" x="20" y="12" width="374" height="58"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conteúdo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ed-4D-TbK" userLabel="Content Label">
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="26.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                                <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do Autor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mq5-fs-VNq" userLabel="Nome Autor Label">
-                                                                <rect key="frame" x="0.0" y="82" width="230.5" height="21.5"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Content description&gt;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yy-Bc-42b" userLabel="Content Description Label">
+                                                                <rect key="frame" x="0.0" y="38.5" width="374" height="19.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                                                <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wAG-b4-M5m" userLabel="Capa Image View">
-                                                        <rect key="frame" x="246.5" y="0.0" width="127.5" height="180"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="wAG-b4-M5m" secondAttribute="height" multiplier="1:1.41" id="IsJ-tc-X5w"/>
-                                                            <constraint firstAttribute="height" constant="180" id="ZMw-lE-tr4"/>
-                                                        </constraints>
-                                                    </imageView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="vQp-YR-52j" userLabel="Autor Stack View">
+                                                        <rect key="frame" x="20" y="94" width="374" height="146"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujA-Ki-7zC" userLabel="Autor Label">
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="26.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="IOd-fI-gSb" userLabel="Autor Image Stack View">
+                                                                <rect key="frame" x="0.0" y="38.5" width="374" height="76"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="g96-eG-fUn">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="76" id="HYP-X2-pW7"/>
+                                                                            <constraint firstAttribute="height" constant="76" id="vbJ-HC-dGi"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                                <integer key="value" value="38"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" text="&lt;Nome do autor&gt;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vb8-kZ-Z1Y" userLabel="Autor Name Label">
+                                                                        <rect key="frame" x="88" y="0.0" width="286" height="76"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Descrição do autor&gt;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2RD-pt-OsC" userLabel="Autor Description Label">
+                                                                <rect key="frame" x="0.0" y="126.5" width="374" height="19.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="WMa-id-0lh" userLabel="Product Data Stack View">
+                                                        <rect key="frame" x="20" y="264" width="374" height="105"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dados do Produto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJz-2B-Zms" userLabel="Product Data Label">
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="26.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="r4q-0E-6I3" userLabel="Data Stack View">
+                                                                <rect key="frame" x="0.0" y="38.5" width="374" height="66.5"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="3fq-ke-1Jv" userLabel="Page Number Stack View">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="19.5"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Número de Páginas:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgC-ya-eQ1" userLabel="Page Number Label">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="155.5" height="19.5"/>
+                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="&lt;Numero de paginas&gt;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9D-sW-i4Z" userLabel="Page Number Value Label">
+                                                                                <rect key="frame" x="159.5" y="0.0" width="214.5" height="19.5"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="UQx-rz-Gi7" userLabel="ISBN Stack View">
+                                                                        <rect key="frame" x="0.0" y="23.5" width="374" height="19.5"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISBN:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xec-vI-ZaO" userLabel="ISBN Label">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="43.5" height="19.5"/>
+                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="&lt;ISBN number&gt;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWb-fp-VkL" userLabel="ISBN Value Label">
+                                                                                <rect key="frame" x="47.5" y="0.0" width="326.5" height="19.5"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fad-JU-Jex" userLabel="Date Stack View">
+                                                                        <rect key="frame" x="0.0" y="47" width="374" height="19.5"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data da Publicação" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1c-bb-mzP" userLabel="Date Label">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="148" height="19.5"/>
+                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="99/99/9999" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCr-Bz-gvj" userLabel="Date Value Label">
+                                                                                <rect key="frame" x="152" y="0.0" width="222" height="19.5"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
+                                                <directionalEdgeInsets key="directionalLayoutMargins" top="12" leading="20" bottom="12" trailing="20"/>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" name="Pampas"/>
-                                        <directionalEdgeInsets key="directionalLayoutMargins" top="20" leading="20" bottom="20" trailing="20"/>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="FvO-fG-Tu8" userLabel="Precos Stack View">
-                                        <rect key="frame" x="0.0" y="220" width="414" height="227"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8Wg-PS-LS0" userLabel="Ebook Stack View">
-                                                <rect key="frame" x="20" y="16" width="374" height="43"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="WKb-G7-1YV" userLabel="Labels Stack View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="63.5" height="43"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-book*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5H-mE-8se">
-                                                                <rect key="frame" x="0.0" y="0.0" width="63.5" height="19.5"/>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 0,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOL-uA-WbX" userLabel="Preco Ebook Label">
-                                                                <rect key="frame" x="0.0" y="23.5" width="63.5" height="19.5"/>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLE-Vk-awQ">
-                                                        <rect key="frame" x="268.5" y="5" width="105.5" height="33.5"/>
-                                                        <color key="tintColor" name="Saffron Mango"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled" title="COMPRAR">
-                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
-                                                            <color key="baseForegroundColor" name="Pampas"/>
-                                                            <color key="baseBackgroundColor" name="Saffron Mango"/>
-                                                        </buttonConfiguration>
-                                                        <connections>
-                                                            <segue destination="4ch-bi-xj0" kind="showDetail" identifier="abrirCarrinhoComLivroSegue" id="lBA-t7-6bF"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNo-yV-kcj" userLabel="Separador View">
-                                                <rect key="frame" x="20" y="75" width="374" height="1"/>
-                                                <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="1" id="Aiv-io-zSs"/>
-                                                </constraints>
-                                            </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="HaB-fK-yph" userLabel="Impresso Stack View">
-                                                <rect key="frame" x="20" y="92" width="374" height="43"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="clR-AK-H9V" userLabel="Labels Stack View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="72.5" height="43"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Impresso" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fs-qQ-fWS">
-                                                                <rect key="frame" x="0.0" y="0.0" width="72.5" height="19.5"/>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 0,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SC3-IQ-eBS" userLabel="Preco Impresso Label">
-                                                                <rect key="frame" x="0.0" y="23.5" width="72.5" height="19.5"/>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1HK-gN-W9h">
-                                                        <rect key="frame" x="268.5" y="5" width="105.5" height="33.5"/>
-                                                        <color key="tintColor" name="Saffron Mango"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled" title="COMPRAR">
-                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
-                                                            <color key="baseForegroundColor" name="Pampas"/>
-                                                            <color key="baseBackgroundColor" name="Saffron Mango"/>
-                                                        </buttonConfiguration>
-                                                        <connections>
-                                                            <segue destination="4ch-bi-xj0" kind="showDetail" identifier="abrirCarrinhoComLivroSegue" id="HCv-Ro-p3O"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yb6-GS-rYr" userLabel="Separador View">
-                                                <rect key="frame" x="20" y="151" width="374" height="1"/>
-                                                <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="1" id="Zmu-w1-bQH"/>
-                                                </constraints>
-                                            </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="VG6-Bf-bc0" userLabel="Combo Stack View">
-                                                <rect key="frame" x="20" y="168" width="374" height="43"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="mPR-8u-rec" userLabel="Labels Stack View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="146" height="43"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-book + Impresso" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hz-Jb-dim">
-                                                                <rect key="frame" x="0.0" y="0.0" width="146" height="19.5"/>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 0,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTl-4N-Tnl" userLabel="Preco Impresso Label">
-                                                                <rect key="frame" x="0.0" y="23.5" width="146" height="19.5"/>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sqI-hh-GNW">
-                                                        <rect key="frame" x="268.5" y="5" width="105.5" height="33.5"/>
-                                                        <color key="tintColor" name="Saffron Mango"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled" title="COMPRAR">
-                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
-                                                            <color key="baseForegroundColor" name="Pampas"/>
-                                                            <color key="baseBackgroundColor" name="Saffron Mango"/>
-                                                        </buttonConfiguration>
-                                                        <connections>
-                                                            <segue destination="4ch-bi-xj0" kind="showDetail" identifier="abrirCarrinhoComLivroSegue" id="Khp-7y-0Ir"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" name="Rum"/>
-                                        <constraints>
-                                            <constraint firstItem="sqI-hh-GNW" firstAttribute="width" secondItem="nLE-Vk-awQ" secondAttribute="width" id="wC7-8b-19V"/>
-                                            <constraint firstItem="1HK-gN-W9h" firstAttribute="width" secondItem="nLE-Vk-awQ" secondAttribute="width" id="zrS-Ge-pZM"/>
-                                        </constraints>
-                                        <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="20" bottom="16" trailing="20"/>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="56Y-2I-iWM" userLabel="Footer Stack View">
-                                        <rect key="frame" x="0.0" y="447" width="414" height="59.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* Você terá acesso às futuras correções do livro. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiF-hU-J6s" userLabel="Info Label">
-                                                <rect key="frame" x="20" y="20" width="374" height="19.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <directionalEdgeInsets key="directionalLayoutMargins" top="20" leading="20" bottom="20" trailing="20"/>
                                     </stackView>
                                 </subviews>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstItem="EpF-gv-J3e" firstAttribute="leading" secondItem="BQ1-h8-x3c" secondAttribute="leading" id="8lS-wz-Ln4"/>
+                                    <constraint firstItem="EpF-gv-J3e" firstAttribute="centerY" secondItem="BQ1-h8-x3c" secondAttribute="centerY" priority="250" id="Byi-5E-SkZ"/>
+                                    <constraint firstItem="EpF-gv-J3e" firstAttribute="centerX" secondItem="BQ1-h8-x3c" secondAttribute="centerX" id="CK8-rY-bN3"/>
+                                    <constraint firstItem="EpF-gv-J3e" firstAttribute="top" secondItem="BQ1-h8-x3c" secondAttribute="top" id="DfF-xf-Wbj"/>
+                                    <constraint firstAttribute="trailing" secondItem="EpF-gv-J3e" secondAttribute="trailing" id="Fox-9F-Gji"/>
+                                    <constraint firstAttribute="bottom" secondItem="EpF-gv-J3e" secondAttribute="bottom" id="qNe-hj-DJc"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EDG-yl-rD0"/>
                         <color key="backgroundColor" name="Pampas"/>
                         <constraints>
-                            <constraint firstItem="EDG-yl-rD0" firstAttribute="trailing" secondItem="Abu-O9-TRp" secondAttribute="trailing" id="03q-vj-OMa"/>
-                            <constraint firstItem="Abu-O9-TRp" firstAttribute="top" secondItem="EDG-yl-rD0" secondAttribute="top" id="k1y-v3-X9i"/>
-                            <constraint firstItem="Abu-O9-TRp" firstAttribute="leading" secondItem="EDG-yl-rD0" secondAttribute="leading" id="p7u-Ia-cbN"/>
+                            <constraint firstItem="EDG-yl-rD0" firstAttribute="leading" secondItem="BQ1-h8-x3c" secondAttribute="leading" id="AWZ-KE-Fae"/>
+                            <constraint firstItem="BQ1-h8-x3c" firstAttribute="trailing" secondItem="EDG-yl-rD0" secondAttribute="trailing" id="T6O-ac-v8R"/>
+                            <constraint firstItem="BQ1-h8-x3c" firstAttribute="bottom" secondItem="EDG-yl-rD0" secondAttribute="bottom" id="WaP-N1-XwH"/>
+                            <constraint firstItem="EDG-yl-rD0" firstAttribute="top" secondItem="BQ1-h8-x3c" secondAttribute="top" id="Zeo-eF-ue6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EKZ-7L-IVr"/>
                     <connections>
+                        <outlet property="ISBNLabel" destination="KWb-fp-VkL" id="3q9-dK-eF0"/>
+                        <outlet property="authorDescriptionLabel" destination="2RD-pt-OsC" id="zeK-OT-sHX"/>
+                        <outlet property="authorImageView" destination="g96-eG-fUn" id="uqN-1g-ouH"/>
+                        <outlet property="authorNameLabel" destination="vb8-kZ-Z1Y" id="nuT-Lu-esY"/>
                         <outlet property="capaImageView" destination="wAG-b4-M5m" id="QHv-FW-oGr"/>
+                        <outlet property="contentDescriptionLabel" destination="2yy-Bc-42b" id="r9f-Ko-YFj"/>
                         <outlet property="nomeDoAutorLabel" destination="Mq5-fs-VNq" id="ayD-Em-O8T"/>
+                        <outlet property="pageNumberLabel" destination="T9D-sW-i4Z" id="dW4-ev-EJX"/>
                         <outlet property="precoComboLabel" destination="rTl-4N-Tnl" id="Luq-6v-eUA"/>
                         <outlet property="precoEbookLabel" destination="KOL-uA-WbX" id="DxY-aY-ZFp"/>
                         <outlet property="precoImpressoLabel" destination="SC3-IQ-eBS" id="c4s-Yb-m6I"/>
+                        <outlet property="publicationDateLabel" destination="hCr-Bz-gvj" id="8Si-18-ogb"/>
                         <outlet property="subtituloLabel" destination="dia-PN-ejE" id="XJf-5Y-Pfo"/>
                         <outlet property="tituloLabel" destination="3UW-aq-4gB" id="lDK-z4-fbk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xfz-7y-EcJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2449" y="11"/>
+            <point key="canvasLocation" x="-2449.275362318841" y="10.714285714285714"/>
         </scene>
         <!--Carrinho View Controller-->
         <scene sceneID="fra-Y1-qZw">
@@ -899,13 +1374,13 @@
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HVd-yi-IgK" userLabel="Titulos Stack View">
                                                                             <rect key="frame" x="0.0" y="0.0" width="243.5" height="49"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Título do Livro" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTs-MM-5t2">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título do Livro" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTs-MM-5t2">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="243.5" height="21.5"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                                                                     <color key="textColor" systemColor="secondaryLabelColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Nome do Autor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5No-xS-Nsw">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do Autor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5No-xS-Nsw">
                                                                                     <rect key="frame" x="0.0" y="29.5" width="243.5" height="19.5"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                                                     <color key="textColor" systemColor="secondaryLabelColor"/>
@@ -916,13 +1391,13 @@
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="THi-C0-qcX" userLabel="Item Info Stack View">
                                                                             <rect key="frame" x="0.0" y="103.5" width="243.5" height="47"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Tipo de Livro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aL-4h-dXA">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipo de Livro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aL-4h-dXA">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="243.5" height="19.5"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                                                     <color key="textColor" systemColor="secondaryLabelColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="R$ 0,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amA-5e-5OX">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 0,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amA-5e-5OX">
                                                                                     <rect key="frame" x="0.0" y="27.5" width="243.5" height="19.5"/>
                                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                                     <nil key="textColor"/>
@@ -1002,11 +1477,11 @@
             <objects>
                 <viewController storyboardIdentifier="SeletorDeAutorViewController" id="iD4-bq-Wxd" customClass="SeletorDeAutorViewController" customModule="LearningTask_12_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UH2-iE-I8Y">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PCA-vt-Gg5">
-                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="790"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -1057,7 +1532,7 @@
                                 </connections>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="PE6-ZF-czk">
-                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <rect key="frame" x="188.5" y="400.5" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="APf-SZ-Atm"/>
@@ -1082,7 +1557,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lBA-t7-6bF"/>
+        <segue reference="Khp-7y-0Ir"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Avatar" width="128" height="128"/>

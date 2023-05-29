@@ -16,7 +16,7 @@ import UIKit
  * * email: "admin@casadocodigo.com.br"
  * * senha: "123456"
  */
-let tokenValue = "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJDYXNhIGRvIEPDs2RpZ28gQVBJIiwic3ViIjoiMiIsImlhdCI6MTY3MTI5NzQ2NSwiZXhwIjoxNjcxOTAyMjY1fQ.0UzD1zdhUZMzcFTVTkyDJslJctl3IZCfZ23zBmxMKmg"
+let tokenValue = "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJDYXNhIGRvIEPDs2RpZ28gQVBJIiwic3ViIjoiMiIsImlhdCI6MTY3MzM3Njk5NCwiZXhwIjoxNjczOTgxNzk0fQ.-zbDixgE2OS3i5YItBDd4jXE6hU999OTtHPkTTqFQIs"
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

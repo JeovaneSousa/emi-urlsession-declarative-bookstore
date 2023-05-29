@@ -59,4 +59,5 @@ extension UIColor {
     static var pampas: UIColor = .init(named: "Pampas") ?? .tertiarySystemBackground
     static var rum: UIColor = .init(named: "Rum") ?? .secondarySystemBackground
     static var saffronMango: UIColor = .init(named: "Saffron Mango") ?? .systemYellow
+    static var whiteText: UIColor = .init(named: "WhiteText") ?? .brown
 }

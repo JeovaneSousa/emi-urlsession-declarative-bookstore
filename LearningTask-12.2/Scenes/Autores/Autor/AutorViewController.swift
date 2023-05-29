@@ -27,7 +27,7 @@ class AutorViewController: UITableViewController {
         setupViews()
         carregaLivrosDoAutor()
     }
-
+    
     private func setupViews() {
         tableView.tableHeaderView = AutorTableHeaderView.constroi(para: autor)
         
@@ -39,21 +39,23 @@ class AutorViewController: UITableViewController {
     private func carregaLivrosDoAutor() {
         guard let id = autor.id else { return }
         
-        livrosAPI?.carregaLivros(porAutorId: id, completionHandler: { [weak self] livros in
-            self?.livrosDoAutor = livros
-            
-        }, failureHandler: { error in
-            let mensagem = """
-                Não foi possível carregar os livros do autor.
-                \(error.localizedDescription)
-            """
-            
-            UIAlertController.showError(mensagem, in: self)
+        livrosAPI?.carregaLivros(porAutorId: id, completionHandler: { [weak self] result in
+            switch result {
+            case .success(let livros):
+                self?.livrosDoAutor = livros
+                
+            case .failure(let error):
+                let mensagem = """
+                    Não foi possível carregar os livros do autor.
+                    \(error.description)
+                """
+                guard let self = self else {return}
+                UIAlertController.showError(mensagem, in: self)
+            }
         })
     }
-    
 }
-
+        
 // MARK: - UITableViewDataSource Implementations
 extension AutorViewController {
     

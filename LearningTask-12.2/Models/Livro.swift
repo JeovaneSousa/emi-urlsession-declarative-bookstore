@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TipoDeLivro: String, CaseIterable, Decodable {
+enum TipoDeLivro: String, CaseIterable, Codable {
     case ebook = "EBOOK"
     case impresso = "HARDCOVER"
     case combo = "COMBO"
@@ -35,7 +35,7 @@ enum TipoDeLivro: String, CaseIterable, Decodable {
     }
 }
 
-struct Preco: Decodable {
+struct Preco: Codable {
     let valor: Decimal
     let tipoDeLivro: TipoDeLivro
     
@@ -45,29 +45,66 @@ struct Preco: Decodable {
     }
 }
 
-struct Livro: Decodable {
+struct Livro: Codable {
     let id: Int?
     let titulo: String
     let subtitulo: String
     let imagemDeCapaURI: URL
     let autor: Autor
     let precos: [Preco]
+    let description: String?
+    let isbn: String?
+    let numberOfPages: Int?
+    let publicationDate: String?
     
-    init(id: Int? = nil, titulo: String, subtitulo: String, imagemDeCapaURI: URL, autor: Autor, precos: [Preco]) {
+    init(id: Int? = nil, titulo: String, subtitulo: String, imagemDeCapaURI: URL, autor: Autor, precos: [Preco], description: String? = nil, isbn: String? = nil, numberOfPages: Int = 0, publicationDate: String? = nil) {
         self.id = id
         self.titulo = titulo
         self.subtitulo = subtitulo
         self.imagemDeCapaURI = imagemDeCapaURI
         self.autor = autor
         self.precos = precos
+        self.description = description
+        self.isbn = isbn
+        self.numberOfPages = numberOfPages
+        self.publicationDate = publicationDate
     }
     
     enum CodingKeys: String, CodingKey {
-        case id
+        case id, description, isbn, numberOfPages, publicationDate
         case titulo = "title"
         case subtitulo = "subtitle"
         case imagemDeCapaURI = "coverImagePath"
         case autor = "author"
         case precos = "prices"
     }
+}
+
+struct BookInput: Codable {
+    let authorId: Int
+    let title: String
+    let subtitle: String
+    let description: String
+    let eBookPrice: Decimal
+    let hardcoverPrice: Decimal
+    let comboPrice: Decimal
+    let coverImagePath: String
+    let numberOfPages: Int
+    let isbn: String
+    let publicationDate: String
+    
+    init(authorId: Int, title: String, subtitle: String, description: String, eBookPrice: Decimal, hardcoverPrice: Decimal, comboPrice: Decimal, coverImagePath: String, numberOfPages: Int, isbn: String, publicationDate: String) {
+        self.authorId = authorId
+        self.title = title
+        self.subtitle = subtitle
+        self.description = description
+        self.eBookPrice = eBookPrice
+        self.hardcoverPrice = hardcoverPrice
+        self.comboPrice = comboPrice
+        self.coverImagePath = coverImagePath
+        self.numberOfPages = numberOfPages
+        self.isbn = isbn
+        self.publicationDate = publicationDate
+    }
+    
 }

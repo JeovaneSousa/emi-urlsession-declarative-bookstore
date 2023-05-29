@@ -9,12 +9,17 @@ import UIKit
 
 class LivrosListViewController: UICollectionViewController {
 
+    enum ExpectedSegues: String {
+        case verFormNovoLivroSegue
+        case verDetalhesDoLivroSegue
+    }
+    
     var livrosAPI: LivrosAPI?
     
-    var livros: [Livro] = [] {
-        didSet {
-            collectionView.reloadData()
-        }
+    var livros: [Livro] = []
+    
+    var lastPosition: Int {
+        return livros.count - 1
     }
     
     override func viewDidLoad() {
@@ -26,10 +31,41 @@ class LivrosListViewController: UICollectionViewController {
     
     func carregaLivros() {
         guard let livrosAPI = livrosAPI else { return }
-        livros = livrosAPI.carregaTodos()
+
+        livrosAPI.carregaTodos { [weak self] result in
+            switch result {
+                
+            case .success(let livros):
+                self?.livros = livros
+                self?.collectionView.reloadData()
+                
+            case .failure(let error):
+                let mensagem = """
+                    Não foi possível carregar os livros de um autor: \(error.description)
+                    """
+                
+                guard let self = self else {return}
+                UIAlertController.showError(mensagem, in: self)
+            }
+        }
+    }
+     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueId = segue.identifier,
+              let segueToPerform = ExpectedSegues(rawValue: segueId) else {return}
+        
+        switch segueToPerform {
+            
+        case .verDetalhesDoLivroSegue:
+            prepareForVerDetalhesDoLivroSegue(for: segue, sender: sender)
+            
+        case .verFormNovoLivroSegue:
+            prepareForVerFormNovoLivroSegue(for: segue, sender: sender)
+        }
+        
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    func prepareForVerDetalhesDoLivroSegue(for segue: UIStoryboardSegue, sender: Any?){
         guard segue.identifier == "verDetalhesDoLivroSegue" else { return }
         
         guard let celula = sender as? LivroCollectionViewCell,
@@ -39,7 +75,26 @@ class LivrosListViewController: UICollectionViewController {
         
         controller.livro = celula.livro
     }
+    
+    func prepareForVerFormNovoLivroSegue(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "verFormNovoLivroSegue" else { return }
+        
+        guard let controller = segue.destination as? NovoLivroViewController else {
+            fatalError("Unable to complete segue with id: \(segue.identifier!)")
+        }
+        
+        controller.livrosApi = LivrosAPI()
+        controller.delegate = self
+    }
+}
 
+//MARK: - NovoLivroViewControllerDelegate Implementation
+extension LivrosListViewController: NovoLivroViewControllerDelegate {
+    func NovoLivroViewController(viewController: UIViewController, adicionou livro: Livro) {
+        livros.append(livro)
+        
+        collectionView.insertItems(at: [IndexPath(row: self.lastPosition, section: .zero)])
+    }
 }
 
 // MARK: - UICollectionViewDataSource implementations

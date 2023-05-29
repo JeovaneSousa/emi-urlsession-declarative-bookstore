@@ -19,6 +19,5 @@ extension NumberFormatter {
     static func formatToCurrency(decimal: Decimal) -> String {
         return currencyFormatter.string(from: decimal as NSDecimalNumber)!
     }
-
 }
 

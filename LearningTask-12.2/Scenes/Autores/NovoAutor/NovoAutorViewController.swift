@@ -11,10 +11,9 @@ protocol NovoAutorViewControllerDelegate: AnyObject {
     func novoAutorViewController(_ controller: NovoAutorViewController, adicionou autor: Autor)
 }
 
+
 class NovoAutorViewController: UIViewController {
 
-    typealias MensagemDeValidacao = String
-    
     @IBOutlet weak var fotoImageView: UIImageView!
     @IBOutlet weak var fotoTextField: UITextField!
     @IBOutlet weak var nomeTextField: UITextField!
@@ -54,17 +53,6 @@ class NovoAutorViewController: UIViewController {
         default:
             cadastraAutor()
         }
-    }
-    
-    private func nomeDeAutorValido(_ nome: String) -> Bool {
-        let pattern = #"^[a-zA-Z-]+ ?.* [a-zA-Z-]+$"#
-        return NSPredicate(format: "SELF MATCHES %@", pattern).evaluate(with: nome)
-    }
-    
-    private func separa(nomeDeAutor: String) -> (String, String) {
-        let separador = " "
-        let nomeCompleto = nomeDeAutor.components(separatedBy: separador)
-        return (nomeCompleto.first!, nomeCompleto.dropFirst().joined(separator: separador))
     }
     
     private func formularioEhValido() -> (Bool, MensagemDeValidacao?) {
